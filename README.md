@@ -92,7 +92,7 @@ Téma: Ticket rendszer
     - Regisztráció
         ![Regisztráció](images/regisztracio.jpg)
     - Ticketek
-        ![Ticketek](images/ticketek.jpg)
+        ![Tickets](images/tickets.jpg)
     - Új feladat
         ![Új ticket](images/ujticket.jpg)
 
