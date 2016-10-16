@@ -43,6 +43,12 @@ Téma: Ticket rendszer
 - #### Használatieset diagram
     ![Használati esetek](images/UseCaseDiagram.png)  
 
+- #### Folyamatok pontos menete
+    1. Új ticket ![Új ticket](images/uj.png)
+    2. Ticket szerkesztése ![Ticket szerkesztése](images/szerekesztes.png)
+    3. Ticket törlés ![Ticket törlés](images/torles.png)
+    4. Ticket status szerkesztés ![Ticket status](images/status.png)
+
 ## Tervezés
 
 ### Architektúra terv
