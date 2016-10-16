@@ -30,15 +30,15 @@ Téma: Ticket rendszer
 		- regisztráció
         
     2. Felhasználó
-        	- Vendég szerepköre
-        	- ticketek megtekintése
-        	- neki szánt ticket státuszának módosítása
+		- vendég szerepköre
+		- ticketek megtekintése
+		- neki szánt ticket státuszának módosítása
 
     3. Admin
-        	- Felhasználó szerepköre
+        	- felhasználó szerepköre
 		- új ticket létrehozása
-        	- ticket szerkesztése
-        	- ticket törlése
+		- ticket szerkesztése
+		- ticket törlése
 
 - #### Használatieset diagram
     ![Használati esetek](images/UseCaseDiagram.png)  
