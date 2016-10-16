@@ -96,3 +96,5 @@ Téma: Ticket rendszer
     - Új feladat
         ![Új ticket](images/ujticket.jpg)
 
+### Adatbázisterv
+![Adatbázisterv](images/adatmodell.png)
