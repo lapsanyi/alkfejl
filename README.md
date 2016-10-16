@@ -42,3 +42,38 @@ Téma: Ticket rendszer
 
 - #### Használatieset diagram
     ![Használati esetek](images/UseCaseDiagram.png)  
+
+## Tervezés
+
+### Architektúra terv
+- #### Oldaltérkép
+	- **Publikus:**
+	    - Főoldal
+	    - Bejelentkezés
+	    - Regisztráció
+	    
+	- **Bejelentkezve:**
+	    - Főoldal
+	    - Kijelentkezés
+	    - Ticketek listája
+	        + új ticket
+	        + ticket szerkesztése
+		+ status szerkesztése
+	        + ticket törlése (adminként)
+
+- #### Végpontok
+    - GET /: főoldal
+    - GET /login: bejelentkezés
+    - POST /login: bejelentkezési adatok feldolgozása
+    - GET /logout: kijelentkezés
+    - GET /signup: regisztráció
+    - POST /signup: regisztrációs adatok feldolgozása
+    - GET /tickets/list: ticketek listázása
+    - GET /tickets/new: új ticket létrehozása
+    - POST /tickets/new: új ticket feldolgozása
+    - GET /tickets/edit/id: ticket szerkesztése
+    - POST /tickets/edit/id: szerkesztett adat feldolgozása
+    - GET /tickets/status/id: ticket status szerkesztése
+    - POST /tickets/status/id: ticket status feldolgozása
+    - GET /tickets/delete/id: ticket törlése
+
