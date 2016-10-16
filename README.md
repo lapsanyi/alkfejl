@@ -45,7 +45,7 @@ Téma: Ticket rendszer
 
 - #### Folyamatok pontos menete
     1. Új ticket ![Új ticket](images/uj.png)
-    2. Ticket szerkesztése ![Ticket szerkesztése](images/szerekesztes.png)
+    2. Ticket szerkesztése ![Ticket szerkesztése](images/szerkesztes.png)
     3. Ticket törlés ![Ticket törlés](images/torles.png)
     4. Ticket status szerkesztés ![Ticket status](images/status.png)
 
