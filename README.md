@@ -25,20 +25,20 @@ Téma: Ticket rendszer
 
 - #### Szerepkörök
     1. Vendég
-	- főoldal megtekintése
-	- bejelentkezés
-	- regisztráció
+		főoldal megtekintése
+		bejelentkezés
+		regisztráció
         
     2. Felhasználó
-        - Vendég szerepköre
-        - ticketek megtekintése
-        - neki szánt ticket státuszának módosítása
+        	Vendég szerepköre
+        	ticketek megtekintése
+        	neki szánt ticket státuszának módosítása
 
     3. Admin
-        - Felhasználó szerepköre
-	- új ticket létrehozása
-        - ticket szerkesztése
-        - ticket törlése
+        	Felhasználó szerepköre
+		új ticket létrehozása
+        	ticket szerkesztése
+        	ticket törlése
 
 - #### Használatieset diagram
     ![Használati esetek](images/UseCaseDiagram.png)
