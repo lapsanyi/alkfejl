@@ -83,3 +83,16 @@ Téma: Ticket rendszer
     - POST /tickets/status/id: ticket status feldolgozása
     - GET /tickets/delete/id: ticket törlése
 
+### Felhasználóifelület-modell
+- #### Oldalvázlatok
+    - Főoldal
+        ![Főoldal](images/fooldal.jpg)
+    - Bejelentkezés
+        ![Bejelentkezés](images/bejelentkezes.jpg)
+    - Regisztráció
+        ![Regisztráció](images/regisztracio.jpg)
+    - Ticketek
+        ![Ticketek](images/ticketek.jpg)
+    - Új feladat
+        ![Új ticket](images/ujticket.jpg)
+
