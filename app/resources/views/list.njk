@@ -1,0 +1,45 @@
+{% extends 'master' %}
+
+{% block content %}
+<div class="container-fluid bg-1 text-center">
+  <h2>Ticketek</h2>
+
+  <div class="row">
+    <div class="col-md-8 col-md-offset-3">
+      <table class="table">
+
+        <thead>
+          <tr>
+            <th>Ticket id</th>
+            <th>Státusz</th>
+            <th>Hozzárendelt</th>
+            <th>Leírás</th>
+            <th>Módosítás</th>
+            <th>Törlés</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
+            <td><button class="btn btn-danger btn-sm">x</button></td>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
+            <td><button class="btn btn-danger btn-sm">x</button></td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+</div>
+{% endblock %}
