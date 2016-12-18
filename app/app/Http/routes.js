@@ -18,7 +18,8 @@
 const Route = use('Route')
 
 Route.get('/', 'TicketController.index')
-Route.get('/tickets/new', 'TicketController.getNew')
+Route.get('/tickets/new', 'TicketController.create').as('ticket_create')
+Route.post('/tickets/new', 'TicketController.doCreate').as('do_ticket_create')
 Route.get('/tickets/list', 'TicketController.getList')
 Route.get('tickets/edit', 'TicketController.getEdit')
 

@@ -20,14 +20,17 @@
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
-            <td><button class="btn btn-danger btn-sm">x</button></td>
-          </tr>
+        {% for ticket in tickets %}
+        <tr>
+          <td>{{ ticket.id }}</td>
+          <td>{{ ticket.status_id }}</td>
+          <td>{{ ticket.user_id}}</td>
+          <td>{{ ticket.description }}</td>
+          <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
+          <td><button class="btn btn-danger btn-sm">x</button></td>
+        </tr>
+        {% endfor %}
+
           <tr>
             <td>1</td>
             <td>2</td>

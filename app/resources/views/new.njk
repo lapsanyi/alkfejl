@@ -6,14 +6,14 @@
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <form class="form-horizontal" action="" method="POST">
+      <form class="form-horizontal" action="{{ do_ticket_create | route }}" method="POST">
 
         <div class="form-group">
           <label for="inputText" class="col-sm-4 control-label">Státusz</label>
           <div class="col-sm-8 left-panel">
-            <input type="radio" name="status" value="1"> Új<br>
-            <input type="radio" name="status" value="2"> Elkezdve<br>
-            <input type="radio" name="status" value="3"> Kész<br>
+            {% for stat in status %}
+              <input type="radio" name="status" value="{{ stat.id }}"> {{ stat.status_txt }}<br>
+            {% endfor %}
           </div>
         </div>
         <div class="form-group">

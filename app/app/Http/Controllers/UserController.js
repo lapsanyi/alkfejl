@@ -12,6 +12,9 @@ class UserController {
     const username = request.input('username')
     const password = request.input('password')
 
+    console.log('nev:  ',username)
+    console.log('pass:  ',password)
+
     try {
       const login = yield request.auth.attempt(username, password)
 
