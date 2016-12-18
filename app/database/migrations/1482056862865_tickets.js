@@ -10,7 +10,6 @@ class TicketsTableSchema extends Schema {
       table.integer('status_id').unsigned().references('id').inTable('status')
       table.string('description').notNullable()
       table.integer('user_id').unsigned().references('id').inTable('user')
-      table.integer('admin').notNullable()
       table.timestamps('ts')
     })
   }

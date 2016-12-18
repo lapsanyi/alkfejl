@@ -1,15 +1,19 @@
 {% extends 'master' %}
 
+{% block title %}Belépés{% endblock %}
 {% block content %}
 <div class="container-fluid bg-1 text-center">
   <h2>Login</h2>
 
-  <div hidden class="alert alert-danger" role="alert">Sikertelen belépési kísérlet.</div>
+  {% if old('error') %}
+  <div class="alert alert-danger" role="alert">Sikertelen belépési kísérlet.</div>
+  {% endif %}
 
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
-      <form class="form-horizontal" action="" method="POST">
+      <form class="form-horizontal" action="{{ 'do_login' | route }}" method="POST">
 
+        {{ csrfField }}
         <div class="form-group">
           <label for="inputEmail" class="col-sm-4 control-label">User</label>
           <div class="col-sm-8">
