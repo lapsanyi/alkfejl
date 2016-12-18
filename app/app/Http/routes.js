@@ -18,8 +18,8 @@
 const Route = use('Route')
 
 Route.get('/', 'TicketController.index')
-Route.on('/tickets/new').render('new')
-Route.on('/tickets/list').render('list')
-Route.on('tickets/edit').render('edit')
+Route.get('/tickets/new', 'TicketController.getNew')
+Route.get('/tickets/list', 'TicketController.getList')
+Route.get('tickets/edit', 'TicketController.getEdit')
 Route.on('/login').render('login')
 Route.on('/register').render('register')
