@@ -8,7 +8,7 @@ class UserController {
   /**
    *
    */
-  * doLogin (request, response) {
+  * doLoginnn (request, response) {
     const username = request.input('username')
     const password = request.input('password')
 
@@ -31,6 +31,28 @@ class UserController {
     }
   }
 
+  * doLogin (request, response) {
+    var post = request.post();
+    try {
+      const user = yield User.findBy('username', post.username);
+      const isSame = yield Hash.verify(post.password, user.password);
+      if (isSame) {
+        yield request.auth.login(user);
+        response.redirect('/tickets/list');
+      }
+      throw new Error();
+    } catch (e) {
+      yield request
+        .with({
+          errors: [{
+            message: 'A felhasználó név vagy a jelszó helytelen!'
+          }]
+        })
+        .flash()
+      yield response.redirect('back');
+    }
+  }
+
   /**
    *
    */
@@ -46,8 +68,11 @@ class UserController {
 
     if (validation.fails()) {
       yield request
-        .withOut('password', 'password_again')
-        .andWith({ errors: validation.messages() })
+        .with({
+          errors: [{
+            message: 'Ellenőrizze az adatokat!'
+          }]
+        })
         .flash()
 
       response.route('register')
@@ -58,14 +83,12 @@ class UserController {
     const user = new User()
     user.username = userData.username
     user.email = userData.email
-    user.nickname = userData.nickname
     user.password = yield Hash.make(userData.password)
+    user.admin = ''
 
     yield user.save()
 
-    yield request.auth.login(user)
-
-    response.route('register')
+    yield response.redirect('login')
   }
 
   /**
@@ -73,7 +96,7 @@ class UserController {
    */
   * doLogout (request, response) {
     yield request.auth.logout()
-    response.route('main')
+    response.route('/')
   }
 
   /**
@@ -81,7 +104,7 @@ class UserController {
    */
   * login (request, response) {
     if (request.currentUser) {
-      response.route('main')
+      yield response.sendView('home')
       return
     }
 
@@ -92,10 +115,6 @@ class UserController {
    *
    */
   * register (request, response) {
-    if (request.currentUser) {
-      response.route('main')
-      return
-    }
 
     yield response.sendView('register')
   }

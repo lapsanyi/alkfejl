@@ -18,13 +18,19 @@
 const Route = use('Route')
 
 Route.get('/', 'TicketController.index')
-Route.get('/tickets/new', 'TicketController.create').as('ticket_create')
-Route.post('/tickets/new', 'TicketController.doCreate').as('do_ticket_create')
-Route.get('/tickets/list', 'TicketController.getList')
-Route.get('tickets/edit', 'TicketController.getEdit')
+Route.get('/tickets/new', 'TicketController.create').middleware('auth')
+Route.post('/tickets/new', 'TicketController.doCreate').middleware('auth')
+Route.get('/tickets/list', 'TicketController.getList').middleware('auth')
 
-Route.get('/login', 'UserController.login').as('login')
-Route.post('/login', 'UserController.doLogin').as('do_login')
-Route.get('/register', 'UserController.register').as('register')
-Route.post('/register', 'UserController.doRegister').as('do_register')
+Route.get('/tickets/:id/edit', 'TicketController.edit').middleware('auth')
+Route.post('/tickets/:id/edit', 'TicketController.doEdit').middleware('auth')
+
+Route.post('/tickets/:id/delete', 'TicketController.doDelete').middleware('auth')
+
+Route.get('/login', 'UserController.login')
+Route.post('/login', 'UserController.doLogin')
+
+Route.get('/register', 'UserController.register')
+Route.post('/register', 'UserController.doRegister')
+
 Route.get('/logout', 'UserController.doLogout').as('do_logout').middleware('auth')

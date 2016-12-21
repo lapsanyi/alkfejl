@@ -3,6 +3,9 @@
 Téma: Ticket rendszer
 
 
+Felhasználók:
+	admin user: Felhasználó név: root pass: root
+
 ## Követelmény-analízis
 
 ### Követelmények

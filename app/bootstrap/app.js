@@ -43,7 +43,6 @@ const providers = [
 */
 const aceProviders = [
   'adonis-lucid/providers/CommandsProvider',
-  'adonis-lucid/providers/FactoryProvider',
   'adonis-lucid/providers/MigrationsProvider',
   'adonis-lucid/providers/SchemaProvider',
   'adonis-lucid/providers/SeederProvider',

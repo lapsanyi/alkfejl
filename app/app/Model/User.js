@@ -1,6 +1,7 @@
 'use strict'
 
 const Lucid = use('Lucid')
+const Hash = use('Hash')
 
 class User extends Lucid {
 

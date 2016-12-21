@@ -5,9 +5,9 @@ const Schema = use('Schema')
 class StatusesTableSchema extends Schema {
 
   up () {
-    this.create('status', (table) => {
+    this.create('statuses', (table) => {
       table.increments()
-      table.string('status_txt').notNullable()
+    table.string('status_txt').notNullable()
   })
   }
 

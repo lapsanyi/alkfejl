@@ -1,5 +1,6 @@
 {% extends 'master' %}
 
+{% block title %}Lista{% endblock %}
 {% block content %}
 <div class="container-fluid bg-1 text-center">
   <h2>Ticketek</h2>
@@ -15,7 +16,9 @@
             <th>Hozzárendelt</th>
             <th>Leírás</th>
             <th>Módosítás</th>
+            {% if currentUser.admin %}
             <th>Törlés</th>
+            {% endif %}
           </tr>
         </thead>
 
@@ -23,22 +26,32 @@
         {% for ticket in tickets %}
         <tr>
           <td>{{ ticket.id }}</td>
-          <td>{{ ticket.status_id }}</td>
-          <td>{{ ticket.user_id}}</td>
-          <td>{{ ticket.description }}</td>
-          <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
-          <td><button class="btn btn-danger btn-sm">x</button></td>
+          <td>
+            {% for stat in statuses %}
+              {% if stat.id == ticket.status_id %}
+                {{stat.status_txt }}
+              {% endif %}
+            {% endfor %}
+          </td>
+          <td>
+            {% for user in users %}
+              {% if user.id == ticket.user_id%}
+                {{ user.username}}
+              {% endif %}
+            {% endfor %}
+          </td>
+          <td><button class="btn-info" disabled title="{{ ticket.description }}">i</button></td>
+          <td><a class="btn btn-default btn-sm" href="/tickets/{{ ticket.id }}/edit">Szerkeszt</a></td>
+          <td>
+            <form action = "/tickets/{{ ticket.id }}/delete" method="POST">
+              {{ csrfField }}
+              {% if currentUser.admin %}
+              <input type="submit" class="btn btn-danger btn-sm" value="X"/>
+              {% endif %}
+            </form>
+          </td>
         </tr>
         {% endfor %}
-
-          <tr>
-            <td>1</td>
-            <td>2</td>
-            <td>3</td>
-            <td>4</td>
-            <td><button class="btn btn-default btn-sm">Szerkeszt</button></td>
-            <td><button class="btn btn-danger btn-sm">x</button></td>
-          </tr>
         </tbody>
 
       </table>
