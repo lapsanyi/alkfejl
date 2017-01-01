@@ -101,3 +101,14 @@ Felhasználók:
 
 ### Adatbázisterv
 ![Adatbázisterv](images/adatmodell.png)
+
+- #### Javascript:
+	- módosított fájlok:
+		+ home.njk
+		+ list.njk
+		+ master.njk
+		+ main.js
+	- események:
+		+ a home page megnyitásakor feldobaja az oldal facebook oldalát(popupwindow függvény fut le és a home page-en van egy onready ami űltalm meghívódik)
+		+ list page-en ha az infó ikonra kattintunk, akkor egy popupként megjelenik a ticket leírása(clickInfo függvény)
+		+ az oldal alján megjelenik a aktuális dátum(actualDate függvény)

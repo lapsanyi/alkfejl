@@ -40,7 +40,7 @@
               {% endif %}
             {% endfor %}
           </td>
-          <td><button class="btn-info" disabled title="{{ ticket.description }}">i</button></td>
+          <td><div class="popup" title="{{ ticket.description }}" onclick="javascript:clickInfo({{ ticket.id }})"><span class="glyphicon glyphicon-info-sign"></span><span class="popuptext" id="disc_popup{{ticket.id}}">{{ ticket.description }}</span></div></td>
           <td><a class="btn btn-default btn-sm" href="/tickets/{{ ticket.id }}/edit">Szerkeszt</a></td>
           <td>
             <form action = "/tickets/{{ ticket.id }}/delete" method="POST">
